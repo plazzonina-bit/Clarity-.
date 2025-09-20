@@ -24,7 +24,7 @@ Devuelve tu análisis en un formato claro, con encabezados para cada uno de los 
 """
 
 # --- Interfaz de Usuario con Streamlit ---
-st.title("CLARITY-Simulador Ético de Campañas con IA (SECAI) 🤖⚖️")
+st.title("CLARITY - Simulador Ético de Campañas con IA 🤖⚖️")
 st.write("Analiza los posibles riesgos éticos de tu campaña de marketing antes de lanzarla.")
 
 # Campos de entrada para el usuario.
@@ -59,3 +59,4 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
