@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(page_title="Clarity")
 import google.generativeai as genai
 
 # Pega tu clave de API aquí.
@@ -59,4 +60,5 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
