@@ -48,7 +48,7 @@ if st.button("Analizar Campaña"):
 
         # Llama a la API de Gemini.
         try:
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             respuesta_ia = model.generate_content(full_prompt)
 
             # Muestra la respuesta en la interfaz.
@@ -60,5 +60,6 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
