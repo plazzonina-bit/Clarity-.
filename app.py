@@ -28,6 +28,16 @@ Devuelve tu análisis en un formato claro, con encabezados para cada uno de los 
 st.title("CLARITY - Simulador Ético de Campañas con IA 🤖⚖️")
 st.write("Analiza los posibles riesgos éticos de tu campaña de marketing antes de lanzarla.")
 
+st.error(
+    """
+    **⚠️ Advertencia: Análisis y Cumplimiento de la Ley de IA de la UE**
+
+    Esta herramienta es un simulador que ofrece un análisis ético automatizado basado en la Ley de IA de la UE. Los resultados generados son recomendaciones y **no deben considerarse como asesoramiento legal definitivo**.
+
+    Es fundamental que revises cada análisis con tu equipo legal y de marketing antes de lanzar cualquier campaña.
+    """
+)
+
 # Campos de entrada para el usuario.
 mensaje_campana = st.text_area("Mensaje de la campaña publicitaria:", height=150, placeholder="Ej: '¡No te quedes atrás! Compra ahora y sé parte de los ganadores.'")
 cta_campana = st.text_input("Llamada a la Acción (CTA):", placeholder="Ej: 'Compra el programa ahora'")
@@ -60,6 +70,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
