@@ -1,11 +1,39 @@
 import streamlit as st
 st.set_page_config(page_title="Clarity")
 import google.generativeai as genai
-
+from streamlit_modal import Modal
 # Pega tu clave de API aquí.
 API_KEY = "AIzaSyDEGUJBCiaXwgMyH_9_Az79yNFUjbAJR1w"
 genai.configure(api_key=API_KEY)
+# 1. Inicializa el estado para saber si el usuario ya aceptó el mensaje
+if 'disclaimer_shown' not in st.session_state:
+    st.session_state.disclaimer_shown = False
 
+# 2. Si el disclaimer NO ha sido aceptado, muestra la ventana emergente
+if not st.session_state.disclaimer_shown:
+    
+    modal = Modal(title="⚖️ Advertencia: Cumplimiento y Transparencia (EU AI Act) ⚖️", 
+                  key="disclaimer-modal",
+                  padding=20, 
+                  max_width=500)
+
+    modal.open()
+
+    if modal.is_open():
+        with modal.container():
+            st.markdown("""
+                Este análisis de riesgo es un borrador generado por un modelo de **Inteligencia Artificial**. 
+                
+                [cite_start]Su objetivo es asistir en la evaluación preliminar de **sesgo, manipulación y transparencia**, según los principios fundamentales de la Ley de IA de la UE[cite: 50, 71, 209].
+                
+                [cite_start]**Advertencia de Responsabilidad:** La salida de la IA **no es una evaluación legal final**[cite: 271, 1077, 1330]. [cite_start]La **responsabilidad y la decisión final** sobre el riesgo ético, el cumplimiento normativo y los derechos fundamentales siempre recaen en el **operador humano**[cite: 72, 211, 466]. Se requiere **validación experta** antes del despliegue de la campaña.
+            """)
+            
+            if st.button("Reconozco la Responsabilidad y Acepto Continuar"):
+                modal.close()
+                st.session_state.disclaimer_shown = True
+                st.rerun() 
+                
 # Define el "prompt" o instrucción para el modelo de IA.
 # Usamos f-strings para insertar las variables directamente en el texto.
 prompt_maestro = """
@@ -60,6 +88,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
