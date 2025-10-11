@@ -32,7 +32,7 @@ st.error(
     """
     **⚠️ Advertencia: Análisis y Cumplimiento de la Ley de IA de la UE**
 
-    Esta herramienta es un simulador que ofrece un análisis ético automatizado basado en la Ley de IA de la UE. Los resultados generados son recomendaciones y **no deben considerarse como asesoramiento legal definitivo**.
+    Esta herramienta es un simulador que ofrece un análisis ético automatizado basado en la Ley de IA de la UE. Los resultados generados son recomendaciones y **no deben considerarse como asesoramiento definitivo**.
 
     Es fundamental que revises cada análisis con tu equipo legal y de marketing antes de lanzar cualquier campaña.
     """
@@ -70,6 +70,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
