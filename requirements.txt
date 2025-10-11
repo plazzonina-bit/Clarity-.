@@ -1,5 +1,6 @@
 streamlit
 google-generativeai
-streamlit_modal
+streamlit-modal
+
 
 
