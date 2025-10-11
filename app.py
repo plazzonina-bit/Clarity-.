@@ -14,7 +14,7 @@ if 'disclaimer_shown' not in st.session_state:
 if not st.session_state.disclaimer_shown:
     
     modal = Modal(title="⚖️ Advertencia: Cumplimiento y Transparencia (EU AI Act) ⚖️", 
-                  key="disclaimer-modal",
+                  key="disclaimer_modal",
                   padding=20, 
                   max_width=500)
 
@@ -89,6 +89,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
