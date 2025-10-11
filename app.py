@@ -35,7 +35,6 @@ if not st.session_state.disclaimer_shown:
                 st.session_state.disclaimer_shown = True
                 st.rerun() 
 
-
 # Define el "prompt" o instrucción para el modelo de IA.
 # Usamos f-strings para insertar las variables directamente en el texto.
 prompt_maestro = """
@@ -90,6 +89,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
