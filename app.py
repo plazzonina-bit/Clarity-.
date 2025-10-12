@@ -3,8 +3,8 @@ st.set_page_config(page_title="Clarity")
 import google.generativeai as genai
 
 # Pega tu clave de API aquí.
-API_KEY = "AIzaSyDEGUJBCiaXwgMyH_9_Az79yNFUjbAJR1w"
-genai.configure(api_key=API_KEY)
+GOOGLE_API_KEY = "AIzaSyDEGUJBCiaXwgMyH_9_Az79yNFUjbAJR1w"
+genai.configure(api_key=GOOGLE_API_KEY)
 
 # Define el "prompt" o instrucción para el modelo de IA.
 # Usamos f-strings para insertar las variables directamente en el texto.
@@ -70,6 +70,7 @@ if st.button("Analizar Campaña"):
     else:
 
         st.warning("Por favor, completa todos los campos para el análisis.")
+
 
 
 
